@@ -1,0 +1,118 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 600px;
+}
+
+.screen { display: none; }
+.screen.active { display: block; }
+
+h1 { color: #2c3e50; text-align: center; }
+
+.form-group { margin-bottom: 1.5rem; }
+label { display: block; margin-bottom: 0.5rem; font-weight: bold; }
+input[type="text"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 1rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover { background-color: #2980b9; }
+button:disabled { background-color: #bdc3c7; cursor: not-allowed; }
+
+.rules-content {
+    background: #f9f9f9;
+    padding: 1rem;
+    border-left: 5px solid #3498db;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.checkbox-group { margin-bottom: 1.5rem; }
+
+/* HEADER QUIZ - Cronometru General */
+.quiz-header {
+    display: flex;
+    justify-content: center; /* Centrăm ceasul de 10 min */
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.timer-box { 
+    background: #ff6b6b; /* Roșu Coral/Pastel mai plăcut */
+    color: white; 
+    padding: 0.6rem 1.5rem; 
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    font-size: 1.1rem;
+}
+
+/* BARA DE PROGRES (Cele 30 de secunde) */
+.timer-bar-container {
+    width: 100%;
+    height: 12px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+#timer-bar-fill {
+    width: 100%; /* Începe plină */
+    height: 100%;
+    background: linear-gradient(90deg, #3498db, #2ecc71); /* Gradient Albastru-Verde */
+    transition: width 1s linear; /* Mișcare fluidă */
+}
+
+#question-text {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    color: #34495e;
+}
+
+.option {
+    display: block;
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+    border: 2px solid #ecf0f1;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.option:hover { background-color: #f0f8ff; border-color: #3498db; }
+
+#skip-btn { background-color: #f39c12; margin-top: 1rem; }
+#skip-btn:hover { background-color: #e67e22; }
+
+.result-summary { text-align: center; margin-bottom: 2rem; }
+#final-grade { font-size: 2.5rem; color: #27ae60; }

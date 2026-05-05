@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade IX English Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div id="registration-screen" class="screen active">
+            <h1>Grade IX English Quiz</h1>
+            <div class="form-group">
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" placeholder="Enter your first name">
+            </div>
+            <div class="form-group">
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" placeholder="Enter your last name">
+            </div>
+            <div class="form-group">
+                <label for="class-name">Class (e.g., IX A):</label>
+                <input type="text" id="class-name" placeholder="Enter your class">
+            </div>
+            <button id="to-rules-btn">Next</button>
+        </div>
+
+        <div id="rules-screen" class="screen">
+            <h1>Quiz Rules</h1>
+            <div class="rules-content">
+                <ul>
+                    <li>The quiz consists of 20 randomly selected questions.</li>
+                    <li>You have a total of <strong>10 minutes</strong> for the entire test.</li>
+                    <li>Each question has a <strong>30-second</strong> individual limit.</li>
+                    <li>If the 30 seconds expire, the question is marked as "Time Expired" and cannot be revisited.</li>
+                    <li>You may use the "Skip" button to return to a question later, provided you have time remaining at the end.</li>
+                    <li>Skipped questions will reappear in a random order after the initial 20.</li>
+                    <li>You must generate and send the PDF report to your teacher for validation. Failure to do so results in a minimum grade.</li>
+                    <li>The starting grade is 2.00 (points for office). Each correct answer is worth 0.4 points.</li>
+                </ul>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="accept-rules">
+                <label for="accept-rules">I have read and understood the rules.</label>
+            </div>
+            <button id="start-quiz-btn" disabled>Start Quiz</button>
+        </div>
+
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <div class="timer-box">Time Left: <span id="global-timer">10:00</span></div>
+        </div>
+            <div class="timer-bar-container">
+                <div id="timer-bar-fill"></div>
+        </div>
+            <div id="question-container">
+                <p id="question-count">Question 1 of 20</p>
+                <div id="question-text"></div>
+                <div id="options-container"></div>
+            </div>
+            <div class="quiz-footer">
+                <button id="skip-btn">Skip Question</button>
+            </div>
+        </div>
+
+        <div id="results-screen" class="screen">
+            <h1>Quiz Completed</h1>
+            <div class="result-summary">
+                <p>Student: <span id="res-name"></span></p>
+                <p>Class: <span id="res-class"></span></p>
+                <h2 id="final-grade">Your Grade: 2.00</h2>
+            </div>
+            <button id="generate-pdf-btn">Generate PDF Report</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
